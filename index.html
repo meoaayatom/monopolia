@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<style type="text/css">
+
+		.boxs {
+			height: 100px;
+			width: 100px;
+			background-color:blue;
+			border: solid;
+			position: absolute;
+			background-size: 100% 100%;
+
+		}
+		.firsBox {
+			background-color: white;
+			background-image: url(1.jpg);
+			background-size: 100% 100%;
+		}
+		.b{
+			background-color: pink;
+			background-size: 100% 100%;
+		}
+		body{
+			background-image: url(3.jpg);
+			background-size: 100% 900%;
+		}
+
+	</style>
+</head>
+<body> 
+	<div class="content">
+		<div class="d-flex">
+			<h4 style="margin-left: 20px">Score: <span class="score">0</span></h4>
+			<div style="margin-left: 100px;">
+				<h4>Рандом:<span class="r"></span></h4>
+			</div>
+		</div>
+		<img src="1.png" class="bt" style="width: 150px; margin-left: 20px">		
+		<div class="boxs firsBox" style="margin-left: 20px">
+			<h4>finish</h4>
+		</div>
+		<div class="boxs bg-opacity-25" style="margin-left: 130px">1</div>
+		<div class="boxs bg-opacity-25" style="margin-left: 240px">2</div>
+		<div class="boxs b bg-opacity-25" style="margin-left: 350px; background-color:">3</div>
+				
+		<div class="boxs bg-opacity-25" style="margin-left: 460px">4</div> 
+		<div class="boxs bg-opacity-25" style="margin-left: 570px">5</div>
+		<div class="boxs b bg-opacity-25" style="margin-left: 680px;  background-color:">6</div>
+		<div class="boxs" style="margin-left: 790px">7</div>
+
+		<div class="boxs bg-opacity-25" style="margin-left: 900px">8</div>
+		<div class="boxs b bg-opacity-25" style="margin-left: 1010px;background-color:" >9</div>
+		<div class="boxs bg-opacity-25" style="margin-left: 1120px">10</div>
+		<div class="boxs bg-opacity-25" style="margin-left: 1230px">11</div>
+
+		<div class="boxs b bg-opacity-25" style="margin-left: 1340px;background-color:">12 
+			<p>иди назад на -5 клеток</p>
+		</div>
+		<div class="boxs bg-opacity-25" style="margin-left: 1340px; margin-top: 110px">13</div>
+		<div class="boxs bg-opacity-25" style="margin-left: 1340px; margin-top: 220px">14</div>	
+		<div class="boxs" style="margin-left: 1340px; margin-top: 330px">15</div>		
+
+		<div class="boxs bg-opacity-25" style="margin-left: 1340px; margin-top: 440px">16</div>
+		<div class="boxs bg-opacity-25" style="margin-left: 1230px; margin-top: 440px">17</div>
+		<div class="boxs b bg-opacity-25" style="margin-left: 1120px; margin-top: 440px">18</div>
+		<div class="boxs" style="margin-left: 1010px; margin-top: 440px">19</div>
+
+		<div class="boxs" style="margin-left: 900px; margin-top: 440px">20</div>
+		<div class="boxs" style="margin-left: 790px; margin-top: 440px">21</div>
+		<div class="boxs" style="margin-left: 680px; margin-top: 440px">22</div>
+		<div class="boxs" style="margin-left: 570px; margin-top: 440px">23</div>
+
+		<div class="boxs b" style="margin-left: 460px; margin-top: 440px">24</div>
+		<div class="boxs" style="margin-left: 350px; margin-top: 440px">25</div>
+		<div class="boxs" style="margin-left: 240px; margin-top: 440px">26</div>
+		<div class="boxs" style="margin-left: 130px; margin-top: 440px">27</div>
+
+		<div class="boxs" style="margin-left: 20px; margin-top: 440px">28</div>
+		<div class="boxs" style="margin-left: 20px; margin-top: 330px">29</div>
+		<div class="boxs b" style="margin-left: 20px; margin-top: 220px">30</div>	
+		<div class="boxs" style="margin-left: 20px; margin-top: 110px">31</div>		
+
+		<!--последние дивы-->
+		<div class="boxs" style="margin-left: 130px; margin-top: 110px; background-color: green; opacity: 0"></div>
+		<div class="boxs" style="margin-left: 240px; margin-top: 110px; background-color: green; opacity: 0"></div>
+		<div class="boxs" style="margin-left: 350px; margin-top: 110px; background-color: green; opacity: 0"></div>
+		<div class="boxs" style="margin-left: 460px; margin-top: 110px; background-color: green; opacity: 0"></div>
+		<div class="boxs" style="margin-left: 570px; margin-top: 110px; background-color: green; opacity: 0"></div>
+		<div class="boxs" style="margin-left: 680px; margin-top: 110px; background-color: green; opacity: 0"></div>
+
+	</div>	
+		
+</body>
+</html>
+
+
+
+
+
+
+<script type="text/javascript">
+	let boxs = document.querySelectorAll(".boxs")
+	let bt = document.querySelector(".bt")
+	let score = document.querySelector(".score")
+	let q = document.querySelector(".r")
+	let shag = 0
+	let points = 0
+
+	bt.onclick = function(){
+		boxs[shag].style.backgroundImage = "none"
+		let rand = Math.random() * 5 + 1
+		let round = Math.round(rand)
+
+		q.innerHTML = round
+
+		shag = shag + round
+
+		boxs[shag].style.backgroundImage = "url(1.jpg)"
+
+		if(shag > 32 && points >= 300){
+			shag = 0
+			boxs[0].style.backgroundImage = "url(1.jpg)"
+			boxs[31].style.backgroundImage = "none"
+			alert("you win")
+		} else if(shag > 32 && points < 300){
+			alert("you loose")
+		}
+		if(shag == 3){
+			points = points - 50
+			score.innerHTML = points
+		}
+		if(shag == 6){
+			points = points - 50
+			score.innerHTML = points
+		}
+		if(shag == 9){
+			points = points - 50
+			score.innerHTML = points
+		}
+		if(shag == 18){
+			points = points - 50
+			score.innerHTML = points
+		}
+		if(shag == 24){
+			points = points - 50
+			score.innerHTML = points
+		}
+		if(shag == 30){
+			points = points - 50
+			score.innerHTML = points
+		}
+		if(shag == 1 || shag == 2 || shag == 4 || shag == 5 || shag == 7 || shag == 8 || shag == 10 || shag == 11 || shag == 12 || shag == 13 || shag == 14 || shag == 15 || shag == 16 || shag == 17 || shag == 19 || shag == 20 || shag == 21 || shag == 22 || shag == 23 || shag == 25|| shag == 26 || shag == 27|| shag == 28 || shag == 29 || shag == 31){
+			points = points + 50
+			score.innerHTML	= points
+		}
+
+		if(shag == 12){
+			shag = 7
+			boxs[7].style.backgroundImage = "url(1.jpg)"
+			boxs[12].style.backgroundImage = "none"
+		}
+	}
+	
+</script>
